@@ -11,7 +11,7 @@ public class Inventory {
         return equipment.getBaseDamage();
     }
 
-    float calculateDamageModifier(int strength) {
-        return equipment.getDamageModifier(strength);
+    float calculateDamageModifier(Stats stats) {
+        return equipment.getDamageModifier(stats);
     }
 }

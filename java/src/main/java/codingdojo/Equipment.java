@@ -31,8 +31,8 @@ class Equipment {
         this.ring.getBaseDamage();
     }
 
-    float getDamageModifier(int strength) {
-        float strengthModifier = strength * 0.1f;
+    float getDamageModifier(Stats stats) {
+        float strengthModifier = stats.modifier();
         return strengthModifier +
             this.leftHand.getDamageModifier() +
             this.rightHand.getDamageModifier() +
