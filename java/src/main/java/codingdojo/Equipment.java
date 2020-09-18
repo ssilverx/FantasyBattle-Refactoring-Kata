@@ -2,63 +2,43 @@ package codingdojo;
 
 
 class Equipment {
-    // TODO add a ring item that may be equipped
-    //  that may also add damage modifier
     private Item leftHand;
     private Item rightHand;
     private Item head;
     private Item feet;
     private Item chest;
+    private Item ring;
 
     Equipment(Item leftHand, Item rightHand, Item head, Item feet, Item chest) {
+        this(leftHand, rightHand, head, feet, chest, new BasicItem("", 0, 0.0f));
+    }
+
+    public Equipment(Item leftHand, Item rightHand, Item head, Item feet, Item chest, Item ring) {
         this.leftHand = leftHand;
         this.rightHand = rightHand;
         this.head = head;
         this.feet = feet;
         this.chest = chest;
-    }
-
-    Item getLeftHand() {
-        return leftHand;
-    }
-    Item getRightHand() {
-        return rightHand;
-    }
-    Item getHead() {
-        return head;
-    }
-    Item getFeet() {
-        return feet;
-    }
-    Item getChest() {
-        return chest;
+        this.ring = ring;
     }
 
     int getBaseDamage() {
-        Item leftHand = getLeftHand();
-        Item rightHand = getRightHand();
-        Item head = getHead();
-        Item feet = getFeet();
-        Item chest = getChest();
-        return leftHand.getBaseDamage() +
-        rightHand.getBaseDamage() +
-        head.getBaseDamage() +
-        feet.getBaseDamage() +
-        chest.getBaseDamage();
+        return this.leftHand.getBaseDamage() +
+        this.rightHand.getBaseDamage() +
+        this.head.getBaseDamage() +
+        this.feet.getBaseDamage() +
+        this.chest.getBaseDamage() +
+        this.ring.getBaseDamage();
     }
 
     float getDamageModifier(int strength) {
-        Item leftHand = getLeftHand();
-        Item rightHand = getRightHand();
-        Item head = getHead();
-        Item feet = getFeet();
-        Item chest = getChest();
         float strengthModifier = strength * 0.1f;
         return strengthModifier +
-            leftHand.getDamageModifier() +
-            rightHand.getDamageModifier() +
-            head.getDamageModifier() +
-            feet.getDamageModifier() +
-            chest.getDamageModifier();
+            this.leftHand.getDamageModifier() +
+            this.rightHand.getDamageModifier() +
+            this.head.getDamageModifier() +
+            this.feet.getDamageModifier() +
+            this.chest.getDamageModifier() +
+            this.ring.getDamageModifier();
     }
 }
