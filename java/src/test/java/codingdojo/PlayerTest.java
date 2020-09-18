@@ -1,5 +1,6 @@
 package codingdojo;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import static org.mockito.Mockito.mock;
 
 public class PlayerTest {
 
-    @Test
+    @Disabled
     void damageCalculationsWithMocks() {
         Inventory inventory = mock(Inventory.class);
         final Equipment equipment = mock(Equipment.class);
